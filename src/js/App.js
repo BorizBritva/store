@@ -1,4 +1,5 @@
 import '../css/App.css';
+import '../css/index.css';
 import Store from "./Store";
 
 function App() {
