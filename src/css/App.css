@@ -11,7 +11,7 @@ a {
   align-items: center;
 }
 
-.portfolio li, .product-list-grid li, .product-card-grid li{
+li{
   list-style-type: none;
 }
 

@@ -1,17 +1,26 @@
 import PropTypes from 'prop-types';
 import ShopItem from './ShopItem';
+const shortid = require('shortid');
 
 function ListView({products}) {
+  const getData = (data) => {
+    if (data.length) {
+      return (
+        <ul className="product-list-grid">
+          {
+            data.map((d) => {
+              return <ShopItem key={shortid.generate()} items={d}/>
+            })
+          }
+        </ul>
+      )
+    }
+    return null;
+  }
 
   return (
     <div className="product-list-wrap">
-      <ul className="product-list-grid">
-        {
-          products.map((item, index) => {
-            return <ShopItem key={index} items={item}/>
-          })
-        }
-      </ul>
+      {getData(products)}
     </div>
   )
 }
